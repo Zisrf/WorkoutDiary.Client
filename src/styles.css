@@ -1,0 +1,39 @@
+header {
+    background-color: gainsboro;
+}
+
+main {
+    background-color: lightgrey;
+}
+
+footer {
+    background-color: gainsboro;
+}
+
+section {
+    padding: 7px;
+}
+
+.last-workout {
+    color: white;
+    background-color: color(srgb 0.3 0.3 0.3);
+}
+
+.exercise {
+    color: #000;
+    background-color: whitesmoke;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+.main-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
