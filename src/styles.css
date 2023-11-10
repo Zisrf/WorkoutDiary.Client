@@ -1,5 +1,6 @@
 header {
     background-color: gainsboro;
+    padding: 5px;
 }
 
 main {
@@ -8,6 +9,7 @@ main {
 
 footer {
     background-color: gainsboro;
+    padding: 3px;
 }
 
 section {
@@ -17,6 +19,7 @@ section {
 .last-workout {
     color: white;
     background-color: color(srgb 0.3 0.3 0.3);
+    border-radius: 10px;
 }
 
 .exercise {
@@ -24,6 +27,20 @@ section {
     background-color: whitesmoke;
     padding: 3px;
     margin-bottom: 3px;
+    border-radius: 3px;
+}
+
+.favourite-exercise {
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.tonnage {
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 7px;
 }
 
 .main-content {
@@ -35,5 +52,14 @@ section {
 @media (max-width: 600px) {
     .main-content {
         flex-direction: column;
+    }
+
+    .favourite-exercise {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    .tonnage {
+        margin-left: 0px;
     }
 }
