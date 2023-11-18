@@ -51,7 +51,7 @@ section {
 
 @media (max-width: 600px) {
     .main-content {
-        flex-direction: column;
+        display: block;
     }
 
     .favourite-exercise {
