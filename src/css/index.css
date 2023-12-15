@@ -1,10 +1,18 @@
 header {
     background-color: gainsboro;
     padding: 5px;
+    padding-left: 15px;
 }
 
 main {
     background-color: lightgrey;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+main section {
+    padding: 7px;
 }
 
 footer {
@@ -12,14 +20,15 @@ footer {
     padding: 3px;
 }
 
-section {
-    padding: 7px;
-}
-
 .last-workout {
     color: white;
     background-color: color(srgb 0.3 0.3 0.3);
     border-radius: 10px;
+}
+
+.last-workout ol {
+    list-style: none;
+    padding-left: 0;
 }
 
 .exercise {
@@ -43,14 +52,8 @@ section {
     border-radius: 7px;
 }
 
-.main-content {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-}
-
 @media (max-width: 600px) {
-    .main-content {
+    main {
         display: block;
     }
 
