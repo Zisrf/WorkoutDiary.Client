@@ -17,9 +17,11 @@
 
     <main>
         <form id="create-workout-form" onsubmit="onSubmited()">
-            <label for="workout-date">Date: </label>
-            <input id="workout-date" type="date" name="date" required />
-            <div>Exercise name, working weight (kg), sets count, repetitions count:</div>
+            <div class="date-input">
+                <label for="workout-date">Date: </label>
+                <input id="workout-date" type="date" name="date" required />
+            </div>
+            <div class="description">Exercise name, working weight (kg), sets count, repetitions count:</div>
             <div class="activity-input">
                 <input class="exercise-name" type="text" value="Жим лёжа"/>
                 <input class="working-weight" type="text" value="100">
@@ -50,7 +52,7 @@
                 <input class="sets-count" type="number" value="1">
                 <input class="repetitions-count" type="number" value="1">
             </div>
-            <input type="submit" value="Create" />
+            <input id="create-workout-button" type="submit" value="Create" />
         </form>
     </main>
 
