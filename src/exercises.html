@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/exercises.css" />
-    <script src="js/loading-time.js"></script>
+    <script src="js/util/loading-time.js"></script>
     <script src="js/exercises.js"></script>
     <title>Exercises</title>
 </head>
@@ -36,27 +36,19 @@
     <div class="content">
         <header>
             <h2>Exercises</h2>
-            <button id="create-exercise-button" onclick="onCreateExerciseClicked()">Create</button>
         </header>
 
         <main>
+            <div id="exercises-list">
+                <section class="exercise">
+                    Bench press
+                </section>
+            </div>
             <section class="exercise">
-                Bench press
-            </section>
-            <section class="exercise">
-                Squats
-            </section>
-            <section class="exercise">
-                Pull-ups
-            </section>
-            <section class="exercise">
-                Seated dumbbell press
-            </section>
-            <section class="exercise">
-                Barbell curl
-            </section>
-            <section class="exercise">
-                French press
+                <form id="create-form" onsubmit="onCreateExerciseClicked();return false">
+                    <input id="exercise_name" type="text" name="Name" />
+                    <input type="submit" value="Create"/>
+                </form>
             </section>
         </main>
 
@@ -64,7 +56,7 @@
             <div id="loading-time">Loading time: undefined</div>
         </footer>
     </div>
-    <script src="js/loading-time.js"></script>
+    <script src="js/util/loading-time.js"></script>
 </body>
 
 </html>

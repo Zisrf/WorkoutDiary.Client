@@ -16,6 +16,7 @@ main {
 main section {
     padding: 7px;
     margin-top: 10px;
+    max-height: 300px;
 }
 
 footer {
