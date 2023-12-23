@@ -21,7 +21,19 @@ class Exercise {
 }
 
 function onCreateWorkoutClicked() {
-    window.open("create-workout.html");
+    let createWindow = window.open("create-workout.html");
+
+    // Doesn't work :(
+    // createWindow.onclose = () => {
+    //     updateWorkoutsList();
+    // }
+
+    let timer = setInterval(() => { 
+        if(createWindow.closed) {
+          clearInterval(timer);
+          updateWorkoutsList();
+        }
+      }, 100);
 }
 
 function updateWorkoutsList() {
