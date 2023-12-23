@@ -37,7 +37,6 @@ function onCreateWorkoutClicked() {
 }
 
 function updateWorkoutsList() {
-    alert("--!!!!!--")
     let workoutsList = document.getElementsByTagName("main")[0];
 
     while (workoutsList.firstChild) {
