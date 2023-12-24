@@ -27,3 +27,23 @@ footer {
     border-radius: 10px;
     margin-right: 10px;
 }
+
+#loading-animation img {
+    height: auto; 
+    max-width: 10%;
+    padding-left: 45%;
+}
+
+#error-picture img {
+    height: auto; 
+    max-width: 20%;
+    padding-left: 40%;
+}
+
+#error-message {
+    padding-left: 43%;
+}
+
+.hiden-element {
+    display: none;
+}

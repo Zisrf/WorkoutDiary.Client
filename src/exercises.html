@@ -40,17 +40,19 @@
         </header>
 
         <main>
+            <div id="loading-animation" >
+                <img src="img/loading.gif">
+            </div>
+            <div id="error-picture" class="hiden-element">
+                <img src="img/error.png">
+                <div id="error-message">Something went wrong!</div>
+            </div>
             <div id="exercises-list">
                 <section class="exercise">
-                    Bench press
+                    <h3 class="exercise-name">Bench press</h3>
+                    <div class="exercise-description">...</div>
                 </section>
             </div>
-            <section class="exercise">
-                <form id="create-form" onsubmit="onCreateExerciseClicked();return false">
-                    <input id="exercise_name" type="text" name="Name" />
-                    <input type="submit" value="Create"/>
-                </form>
-            </section>
         </main>
 
         <footer>
