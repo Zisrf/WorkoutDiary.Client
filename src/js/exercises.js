@@ -5,6 +5,10 @@ class Exercise {
     }
 }
 
+async function onReloadExercisesClicked() {
+    await updateExercisesList();
+}
+
 async function updateExercisesList() {
     let list = document.getElementById("exercises-list");
 
@@ -34,11 +38,11 @@ async function updateExercisesList() {
             let section = document.createElement("section");
             section.className = "exercise";
 
-            exerciseName = document.createElement("h3");
+            let exerciseName = document.createElement("h3");
             exerciseName.appendChild(document.createTextNode(exercise.name))
             section.appendChild(exerciseName);
     
-            exerciseDescription = document.createElement("div");
+            let exerciseDescription = document.createElement("div");
             exerciseDescription.appendChild(document.createTextNode("Description: " + exercise.description));
             section.appendChild(exerciseDescription);
     
