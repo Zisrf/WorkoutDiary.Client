@@ -47,6 +47,7 @@ footer {
     flex-direction: column;
 }
 
-form .description {
-    margin-top: 10px;
+label {
+    min-width: 10%;
+    display: inline-block;
 }
