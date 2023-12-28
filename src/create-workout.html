@@ -7,7 +7,9 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/create-workout.css" />
-    <script src="js/create-workout.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/parsley.js"></script>
+    <script src="../lib/i18n/ru.js"></script>
     <title>Create workout</title>
 </head>
 
@@ -17,41 +19,160 @@
     </header>
 
     <main>
-        <form id="create-workout-form" onsubmit="onSubmited()">
+        <form id="create-workout-form" onsubmit="onSubmited(); return false" data-parsley-ui-enabled="true">
             <div class="date-input">
                 <label for="workout-date">Date: </label>
-                <input id="workout-date" type="date" name="date" required />
-            </div>
-            <div class="description">Exercise name, working weight (kg), sets count, repetitions count:</div>
-            <div class="activity-input">
-                <input class="exercise-name" type="text" value="Жим лёжа"/>
-                <input class="working-weight" type="text" value="100">
-                <input class="sets-count" type="number" value="3">
-                <input class="repetitions-count" type="number" value="1">
+                <input id="workout-date" type="date" name="date" data-parsley-required/>
             </div>
             <div class="activity-input">
-                <input class="exercise-name" type="text" value="Становая тяга"/>
-                <input class="working-weight" type="text" value="80">
-                <input class="sets-count" type="number" value="3">
-                <input class="repetitions-count" type="number" value="6">
+                <div>
+                    <label for="exercise-name">Exercise name: </label>
+                    <input class="exercise-name" type="text" value="Жим лёжа"
+                        data-parsley-required
+                        data-parsley-minlength="3"
+                        data-parsley-maxlength="60"/>
+                </div>
+                <div>
+                    <label for="working-weight">Working weight: </label>
+                    <input class="working-weight" type="text" value="60"
+                        data-parsley-required
+                        data-parsley-type="number"
+                        data-parsley-min="0">
+                </div>
+                <div>
+                    <label for="sets-count">Sets count: </label>
+                    <input class="sets-count" type="text" value="1"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+                <div>
+                    <label for="repetitions-count">Repetitions count: </label>
+                    <input class="repetitions-count" type="text" value="1"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
             </div>
             <div class="activity-input">
-                <input class="exercise-name" type="text" value="Приседания со штангой"/>
-                <input class="working-weight" type="text" value="72,5">
-                <input class="sets-count" type="number" value="3">
-                <input class="repetitions-count" type="number" value="10">
+                <div>
+                    <label for="exercise-name">Exercise name: </label>
+                    <input class="exercise-name" type="text" value="Становая тяга"
+                        data-parsley-required
+                        data-parsley-minlength="3"
+                        data-parsley-maxlength="60"/>
+                </div>
+                <div>
+                    <label for="working-weight">Working weight: </label>
+                    <input class="working-weight" type="text" value="80"
+                        data-parsley-required
+                        data-parsley-type="number"
+                        data-parsley-min="0">
+                </div>
+                <div>
+                    <label for="sets-count">Sets count: </label>
+                    <input class="sets-count" type="text" value="3"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+                <div>
+                    <label for="repetitions-count">Repetitions count: </label>
+                    <input class="repetitions-count" type="text" value="6"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
             </div>
             <div class="activity-input">
-                <input class="exercise-name" type="text" value="Французский жим"/>
-                <input class="working-weight" type="text" value="25">
-                <input class="sets-count" type="number" value="2">
-                <input class="repetitions-count" type="number" value="12">
+                <div>
+                    <label for="exercise-name">Exercise name: </label>
+                    <input class="exercise-name" type="text" value="Приседания со штангой"
+                        data-parsley-required
+                        data-parsley-minlength="3"
+                        data-parsley-maxlength="60"/>
+                </div>
+                <div>
+                    <label for="working-weight">Working weight: </label>
+                    <input class="working-weight" type="text" value="70"
+                        data-parsley-required
+                        data-parsley-type="number"
+                        data-parsley-min="0">
+                </div>
+                <div>
+                    <label for="sets-count">Sets count: </label>
+                    <input class="sets-count" type="text" value="3"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+                <div>
+                    <label for="repetitions-count">Repetitions count: </label>
+                    <input class="repetitions-count" type="text" value="10"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
             </div>
             <div class="activity-input">
-                <input class="exercise-name" type="text" value="Подъём штанги на бицепс"/>
-                <input class="working-weight" type="text" value="42,5">
-                <input class="sets-count" type="number" value="1">
-                <input class="repetitions-count" type="number" value="1">
+                <div>
+                    <label for="exercise-name">Exercise name: </label>
+                    <input class="exercise-name" type="text" value="Строгий подъём штанги на бицепс"
+                        data-parsley-required
+                        data-parsley-minlength="3"
+                        data-parsley-maxlength="60"/>
+                </div>
+                <div>
+                    <label for="working-weight">Working weight: </label>
+                    <input class="working-weight" type="text" value="40"
+                        data-parsley-required
+                        data-parsley-type="number"
+                        data-parsley-min="0">
+                </div>
+                <div>
+                    <label for="sets-count">Sets count: </label>
+                    <input class="sets-count" type="text" value="1"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+                <div>
+                    <label for="repetitions-count">Repetitions count: </label>
+                    <input class="repetitions-count" type="text" value="1"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+            </div>
+            <div class="activity-input">
+                <div>
+                    <label for="exercise-name">Exercise name: </label>
+                    <input class="exercise-name" type="text" value="Французский жим"
+                        data-parsley-required
+                        data-parsley-minlength="3"
+                        data-parsley-maxlength="60"/>
+                </div>
+                <div>
+                    <label for="working-weight">Working weight: </label>
+                    <input class="working-weight" type="text" value="25"
+                        data-parsley-required
+                        data-parsley-type="number"
+                        data-parsley-min="0">
+                </div>
+                <div>
+                    <label for="sets-count">Sets count: </label>
+                    <input class="sets-count" type="text" value="3"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
+                <div>
+                    <label for="repetitions-count">Repetitions count: </label>
+                    <input class="repetitions-count" type="text" value="12"
+                        data-parsley-required
+                        data-parsley-type="integer"
+                        data-parsley-min="1">
+                </div>
             </div>
             <input id="create-workout-button" type="submit" value="Create" />
         </form>
@@ -59,6 +180,7 @@
 
     <footer>
     </footer>
+    <script src="js/create-workout.js"></script>
 </body>
 
 </html>

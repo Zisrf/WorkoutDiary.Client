@@ -21,6 +21,12 @@ class Exercise {
 }
 
 function onSubmited() {
+    let instance = $('#create-workout-form').parsley();
+
+    if (!instance.isValid()) {
+        return;
+    }
+    
     let workoutsStr = localStorage.getItem("workouts");
     let workouts;
     if (!workoutsStr) {
