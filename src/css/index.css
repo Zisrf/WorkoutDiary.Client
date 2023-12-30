@@ -45,6 +45,11 @@ footer {
     border-radius: 10px;
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
 .tonnage {
     margin-left: 10px;
     margin-top: 10px;
